@@ -4,7 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "node ./dev-run.js"
+    "dev": "node ./dev-run.js",
+    "installAll": "node ./install-all.js"
   },
   "keywords": [],
   "author": "",
