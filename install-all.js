@@ -2,7 +2,7 @@ import { exec } from 'child_process';
 import { stdout } from 'process';
 
 // This file simultaneously installs all dependencies in every root directory
-exec('npm install')
+exec('npm install', { cwd: '.' })
     .stdout.on('data', (data) => {
         stdout.write('[Root] ' + data);
     })
@@ -10,7 +10,7 @@ exec('npm install')
         console.log('[Root] Dependenices finished Installing');
     });
 
-exec('cd frontend && npm install')
+exec('npm install', { cwd: './frontend' })
     .stdout.on('data', (data) => {
         stdout.write('[Frontend] ' + data);
     })
@@ -18,7 +18,7 @@ exec('cd frontend && npm install')
         console.log('[Frontend] Dependencies finished installing');
     });
 
-exec('cd backend && npm install')
+exec('npm install', { cwd: './backend' })
     .stdout.on('data', (data) => {
         stdout.write('[Backend] ' + data);
     })
