@@ -9,7 +9,7 @@ exec('npm run dev', { cwd: './frontend' })
         console.log(err);
     });
 
-exec('nodemon ./dev-run.js --ignore "build/*"', {
+exec('node ./dev-run.js --ignore "build/*"', {
     cwd: './backend',
 }).stdout.on('data', (data) => {
     stdout.write(data);
